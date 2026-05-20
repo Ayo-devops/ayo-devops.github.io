@@ -111,6 +111,26 @@ nav {
 }
 .nav-cta:hover { background: rgba(0,240,200,0.08); }
 
+/* Hamburger — hidden by default on desktop */
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; z-index: 200; }
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--text); transition: all 0.3s ease; border-radius: 2px; }
+.hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: translateX(-8px); }
+.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+.mobile-menu {
+  display: none; position: fixed; inset: 0; z-index: 150;
+  background: rgba(11,15,46,0.98); backdrop-filter: blur(20px);
+  flex-direction: column; align-items: center; justify-content: center; gap: 2rem;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-family: 'Syne', sans-serif; font-size: clamp(1.5rem, 6vw, 2.2rem); font-weight: 800;
+  color: var(--text); text-decoration: none; letter-spacing: 3px; text-transform: uppercase;
+  transition: color 0.2s;
+}
+.mobile-menu a:hover { color: var(--accent); }
+.mobile-menu .menu-accent-line { width: 40px; height: 1px; background: var(--accent); margin: 0.5rem 0; }
+
 /* ============================================================
    HERO
    ============================================================ */
@@ -916,8 +936,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
         <div class="card-body">
           <div class="card-num">Project 04</div>
           <div class="card-title">Creator Custom App — ClassFlow</div>
-          <p class="card-desc">ClassFlow — a Zoho Creator-powered class scheduling and student management system with enrollment tracking, attendance logging, automated reminders, and instructor dashboards.</p>
-          <div class="card-footer"><div class="card-tags"><div class="card-tag">Zoho Creator</div><div class="card-tag">EdTech</div><div class="card-tag">Scheduling</div></div><a href="#" class="card-link">View Case →</a></div>
+          <p class="card-desc">ClassFlow — a Zoho Creator-powered academic deadline reminder system with personalized email automation, dashboard, and custom Deluge scripting for 70+ students.</p>
+          <div class="card-footer"><div class="card-tags"><div class="card-tag">Zoho Creator</div><div class="card-tag">EdTech</div><div class="card-tag">Deluge</div></div><a href="classflow.html" class="card-link">View Case →</a></div>
         </div>
       </div>
 
