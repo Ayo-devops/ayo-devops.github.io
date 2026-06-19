@@ -1312,7 +1312,7 @@ const defaultProjects = [
     description: 'End-to-end Zoho Books implementation for SolidRock Building Supplies — including chart of accounts, automated invoicing, vendor management, and executive reporting dashboards.',
     tags: ['Zoho Books', 'Invoicing', 'Dashboards'],
     metrics: [{ value: '100%', label: 'Data Accuracy' }, { value: '3×', label: 'Faster Invoicing' }, { value: 'Full', label: 'Financial Visibility' }],
-    link: 'solidrock.html',
+    link: 'https://app.notion.com/p/Zoho-Books-Implementation-SolidRock-Building-Supplies-32287d46b60980a0aa04c68edd58b3af?v=31187d46b609817cad24000c7cfdd14b&source=copy_link',
     image: '',
     featured: true
   },
@@ -1323,7 +1323,7 @@ const defaultProjects = [
     description: 'Multi-step Zoho Campaigns + Flow automation for a digital agency — automating lead capture, email sequences, follow-ups, and CRM sync. Reduced manual campaign work by 80%.',
     tags: ['Zoho Campaigns', 'Zoho Flow', 'Lead Nurture'],
     metrics: [],
-    link: '#',
+    link: 'https://app.notion.com/p/Zoho-Campaign-Workflow-Automation-Lead-Nurturing-Series-31187d46b60981d19719f691397e6584?v=31187d46b609817cad24000c7cfdd14b&source=copy_link',
     image: '',
     featured: false
   },
@@ -1367,7 +1367,29 @@ const defaultProjects = [
     description: 'Branded email template system in Zoho Campaigns — segmented lists, automated drip sequences, A/B testing setup, and deliverability optimization for a media client.',
     tags: ['Zoho Campaigns', 'Email Design', 'Deliverability'],
     metrics: [],
-    link: '#',
+    link: 'https://app.notion.com/p/Zoho-Campaign-Welcome-Email-Template-31187d46b6098191aea7fb3fa1a2a476?v=31187d46b609817cad24000c7cfdd14b&source=copy_link',
+    image: '',
+    featured: false
+  },
+  {
+    id: 'medsupply-zoho-one-erp',
+    title: 'MedSupply Full Zoho One ERP Implementation',
+    category: 'integration',
+    description: 'Full Zoho One ERP rollout for MedSupply — unifying CRM, Books, Inventory, and Creator apps into a single connected system to replace fragmented tools across the business.',
+    tags: ['Zoho One', 'ERP', 'CRM', 'Books'],
+    metrics: [],
+    link: 'https://app.notion.com/p/MedSupply-Full-Zoho-One-ERP-Implementation-37887d46b609802d97eec0d069821d4b?source=copy_link',
+    image: '',
+    featured: false
+  },
+  {
+    id: 'zoho-crm-setup-implementation',
+    title: 'Zoho CRM Setup & Implementation',
+    category: 'crm',
+    description: 'Full Zoho CRM setup and configuration — custom pipelines, lead stages, and automation built around the client\u2019s actual sales process from the ground up.',
+    tags: ['Zoho CRM', 'Pipeline Design', 'Sales Automation'],
+    metrics: [],
+    link: 'https://app.notion.com/p/Zoho-CRM-Setup-Implementation-31187d46b60981fbb910ecf0ba165c72?v=31187d46b609817cad24000c7cfdd14b&source=copy_link',
     image: '',
     featured: false
   }
@@ -1429,7 +1451,7 @@ function renderProjects() {
           <div class="card-title">${escapeHtml(project.title)}</div>
           ${metrics}
           <p class="card-desc">${escapeHtml(project.description)}</p>
-          <div class="card-footer"><div class="card-tags">${tags}</div><a href="${escapeHtml(project.link || '#')}" class="card-link">View Case →</a></div>
+          <div class="card-footer"><div class="card-tags">${tags}</div><a href="${escapeHtml(project.link || '#')}" class="card-link"${/^https?:\/\//.test(project.link || '') ? ' target="_blank" rel="noopener"' : ''}>View Case →</a></div>
         </div>
       </div>`;
   }).join('') || '<div class="section-sub">No projects in this category yet.</div>';
