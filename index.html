@@ -177,6 +177,13 @@ html[data-theme="dark"] .theme-toggle .icon-moon { display: block; }
   flex-direction: column; align-items: center; justify-content: center; gap: 2rem;
 }
 .mobile-menu.open { display: flex; }
+.mobile-menu-close {
+  position: fixed; top: 1.3rem; right: 5vw; z-index: 250;
+  width: 42px; height: 42px; display: flex; align-items: center; justify-content: center;
+  background: var(--card); color: var(--text); border: 1px solid rgba(var(--line-rgb),0.18);
+  border-radius: 50%; cursor: pointer; font-size: 22px; line-height: 1; padding: 0;
+}
+.mobile-menu-close:hover { color: var(--accent); border-color: rgba(var(--accent-rgb),0.4); }
 .mobile-menu a {
   font-family: var(--font-display), sans-serif; font-size: clamp(1.5rem, 6vw, 2.2rem); font-weight: 800;
   color: var(--text); text-decoration: none; letter-spacing: 3px; text-transform: uppercase;
@@ -717,7 +724,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
   /* Projects */
   .projects-grid { grid-template-columns: 1fr; }
-  .p-featured { grid-column: span 1; }
+  .project-card.p-featured { grid-column: span 1; }
   .p-featured .card-img { height: 180px; }
   .card-img { height: 160px; }
   .filter-row { gap: 6px; }
@@ -741,7 +748,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .cta-actions .btn-secondary { display: block; text-align: center; width: 100%; }
 
   /* Testimonials */
-  .tcard { width: 280px; }
+  .marquee-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; scrollbar-width: none; }
+  .marquee-wrapper::-webkit-scrollbar { display: none; }
+  .marquee-track { animation: none !important; width: max-content; }
+  .tcard { width: 84vw; scroll-snap-align: center; }
   .featured-testi { padding: 1.8rem 1.4rem; }
   .ft-inner { grid-template-columns: 1fr; gap: 1.2rem; }
   .ft-big-quote { font-size: 2.5rem; }
@@ -796,6 +806,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 <!-- Mobile menu overlay -->
 <div class="mobile-menu" id="mobileMenu">
+  <button type="button" class="mobile-menu-close" id="mobileMenuClose" onclick="closeMobileMenu()" aria-label="Close menu">×</button>
   <a href="#about" onclick="closeMobileMenu()">About</a>
   <a href="#experience" onclick="closeMobileMenu()">Experience</a>
   <a href="#projects" onclick="closeMobileMenu()">Work</a>
@@ -1312,7 +1323,7 @@ const defaultProjects = [
     description: 'End-to-end Zoho Books implementation for SolidRock Building Supplies — including chart of accounts, automated invoicing, vendor management, and executive reporting dashboards.',
     tags: ['Zoho Books', 'Invoicing', 'Dashboards'],
     metrics: [{ value: '100%', label: 'Data Accuracy' }, { value: '3×', label: 'Faster Invoicing' }, { value: 'Full', label: 'Financial Visibility' }],
-    link: 'https://app.notion.com/p/Zoho-Books-Implementation-SolidRock-Building-Supplies-32287d46b60980a0aa04c68edd58b3af?v=31187d46b609817cad24000c7cfdd14b&source=copy_link',
+    link: 'solidrock.html',
     image: '',
     featured: true
   },
