@@ -9,6 +9,9 @@
 *,*::before,*::after { background-image:none !important; }
 html { scroll-padding-top:88px; }
 body { min-width:320px; color:var(--ink); background:var(--ivory); font-family:'Inter',sans-serif; font-size:16px; }
+h1,h2,h3,h4,h5,h6,.nav-logo,.case-title,.case-client,.section-heading,.cta-heading,.hstat-num,.challenge-title,.skill-item-title,.ws-title,.feature-title {
+  font-family:'Times New Roman',Times,serif !important;
+}
 .grid-overlay { display:none; }
 nav {
   top:14px; left:50%; right:auto; width:min(1040px,calc(100% - 32px)); min-height:58px;
